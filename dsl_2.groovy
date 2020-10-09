@@ -5,7 +5,10 @@ job('job_5 via dsl-plugin') {
     steps {
         shell('echo Hello World!')
     }
-    publishers {
+    steps {
+	shell ('python print ("hello Python"))
+   }    
+publishers {
         archiveArtifacts('**/*.py')
     }
 }
