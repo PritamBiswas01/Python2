@@ -6,7 +6,7 @@ job('job_5 via dsl-plugin') {
         shell('echo Hello World!')
     }
     steps {
-	shell ('python print ("hello Python"))
+	shell ('python3 python_1.py))
    }    
 publishers {
         archiveArtifacts('**/*.py')
