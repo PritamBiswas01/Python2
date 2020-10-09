@@ -6,8 +6,7 @@ job('job_4 via dsl-plugin') {
         scm('* * * * *')
     }
     steps {
-        /bin/sh
-		python3 /var/lib/jenkins/workspace/Job_1/python_1.py
+        shell(readFileFromWorkspace('python_1.py'))
     }
     publishers {
         archiveArtifacts('**/*.py')
