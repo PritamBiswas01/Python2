@@ -6,10 +6,8 @@ job('job_5 via dsl-plugin') {
         shell('echo Hello World!')
     }
     steps {
-	python {
-		command('python3 python_1.py')
+	shell(readFileFromWorkspace('job.sh')
 	}
-   }    
    publishers {
         archiveArtifacts('**/*.py')
     }
