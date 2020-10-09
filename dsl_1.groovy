@@ -1,6 +1,6 @@
 job('job_4 via dsl-plugin') {
     scm {
-        github('https://github.com/pritambiswas01/Python2', 'master')
+        git('https://github.com/pritambiswas01/Python2', 'master')
     }
     triggers {
         scm('* * * * *')
