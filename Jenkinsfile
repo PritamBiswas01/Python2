@@ -9,7 +9,7 @@ pipeline {
             }
             stage('Build') {
                   steps {
-						shell(readFileFromWorkspace('job.sh'))
+						sh 'job.sh
 				}
 
             }
