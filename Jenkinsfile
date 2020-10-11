@@ -19,7 +19,9 @@ pipeline {
                   }
             }
             stage('Deploy Production') {
-                  build job: 'job_3'
-            }
+                  steps {
+						build job: 'job_3'
+				}
+			}
       }
 }
