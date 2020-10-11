@@ -9,8 +9,9 @@ pipeline {
             }
             stage('Build') {
                   steps {
-                        echo 'Building Sample Maven Project'
-                  }
+						shell(readFileFromWorkspace('job.sh'))
+				}
+
             }
             stage('Deploy') {
                   steps {
@@ -18,9 +19,7 @@ pipeline {
                   }
             }
             stage('Deploy Production') {
-                  steps {
-                        echo "Deploying in Production Area"
-                  }
+                  build job: 'job_3'
             }
       }
 }
