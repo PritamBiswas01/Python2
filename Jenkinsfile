@@ -9,8 +9,8 @@ pipeline {
             }
             stage('Build') {
                   steps {
-						sh 'job.sh
-				}
+						sh 'job.sh'
+			}
 
             }
             stage('Deploy') {
