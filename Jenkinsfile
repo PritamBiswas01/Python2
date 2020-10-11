@@ -3,15 +3,8 @@ pipeline {
       stages {
             stage('Init') {
                   steps {
-                        scm {
-							git("https://github.com/pritambiswas01/Python2.git", 'master')
-						}
-						triggers {
-							scm('* * * * *')
-						}
-						echo 'Hi, this is Anshul from LevelUp360'
-                        echo 'We are Starting the Testing'
-                  }
+                		build job: 'job_1'
+				}
             }
             stage('Build') {
                   steps {
