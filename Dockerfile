@@ -1,10 +1,7 @@
 FROM python:3
 
-WORKDIR /root/gitdir_2
+ADD /root/gitdir_2/python_1.py /
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install pystrich
 
-COPY . .
-
-CMD [ "python", "./python_1.py" ]
+CMD [ "python", "./my_script.py" ]
