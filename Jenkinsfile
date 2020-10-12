@@ -1,26 +1,23 @@
 pipeline {
-      agent any
-      stages {
-            stage('Init') {
-                  steps {
-                		build job: 'job_1'
-				}
+    agent any
+    stages {
+        stage('Build Application') {
+            steps {
+                echo "Now Building Artifacts...."
             }
-            stage('Build') {
-                  steps {
-						sh 'job.sh
-				}
-
+            post {
+                success {
+                    echo "Now Archiving the Artifacts...."
+                    archiveArtifacts artifacts: '**/*.py'
+                }
             }
-            stage('Deploy') {
-                  steps {
-                        echo "Deploying in Staging Area"
-                  }
+        }
+ 
+        Stage('Create Tomcat Docker Image'){
+            steps {
+                sh "docker build . -t pythonsamplewebapp:${env.BUILD_ID}"
             }
-            stage('Deploy Production') {
-                  steps {
-						build job: 'job_3'
-				}
-			}
-      }
+        }
+ 
+    }
 }
