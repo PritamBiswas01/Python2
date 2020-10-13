@@ -1,6 +1,6 @@
 FROM python:3
 
-ADD python_1.py /
+ADD /root/python_1.py /
 
 RUN pip install pystrich
 
