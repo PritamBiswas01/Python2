@@ -1,6 +1,7 @@
 FROM python:3
 
-ADD /root/python_1.py /
+WORKDIR /root/gitdir_2
+ADD python_1.py /
 
 RUN pip install pystrich
 
