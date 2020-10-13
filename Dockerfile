@@ -1,6 +1,5 @@
 FROM python:3
 
-WORKDIR /root/gitdir_2
-ADD python_1.py /temp
+ADD python_1.py /
 
-CMD [ "python", "temp/python_1.py" ]
+CMD [ "python", "./python_1.py" ]
